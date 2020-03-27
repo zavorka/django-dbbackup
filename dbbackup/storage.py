@@ -83,7 +83,8 @@ class Storage(object):
 
     def read_file(self, filepath):
         self.logger.debug('Reading file %s', filepath)
-        file_ = self.storage.open(name=filepath, mode='rb')
+        fp = self.storage.open(name=filepath, mode='rb')
+        file_ = utils.create_spooled_temporary_file(fileobj=fp)
         if not getattr(file_, 'name', None):
             file_.name = filepath
         return file_
