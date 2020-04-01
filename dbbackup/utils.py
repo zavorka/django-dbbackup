@@ -10,6 +10,7 @@ import tempfile
 import gzip
 import re
 import logging
+import six
 from getpass import getpass
 from shutil import copyfileobj
 from functools import wraps
@@ -18,7 +19,7 @@ from datetime import datetime
 from django.core.mail import EmailMultiAlternatives
 from django.db import connection
 from django.http import HttpRequest
-from django.utils import six, timezone
+from django.utils import timezone
 
 try:
     from pipes import quote

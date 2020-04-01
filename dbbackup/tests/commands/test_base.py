@@ -3,9 +3,9 @@ Tests for base command class.
 """
 import os
 import logging
+import six
 from mock import patch
 from django.test import TestCase
-from django.utils import six
 from django.core.files import File
 from dbbackup.management.commands._base import BaseDbBackupCommand
 from dbbackup.storage import get_storage
